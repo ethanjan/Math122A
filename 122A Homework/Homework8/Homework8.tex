@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+%\usepackage{mathptmx}
+\usepackage{accents}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{IEEEtrantools}
+ \usepackage{float}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand*\conj[1]{\bar{#1}}
+\newcommand*\mean[1]{\bar{#1}}
+\newcommand\widebar[1]{\mathop{\overline{#1}}}
+
+
+\newcommand{\cc}{{\mathbb C}}
+\newcommand{\rr}{{\mathbb R}}
+\newcommand{\qq}{{\mathbb Q}}
+\newcommand{\nn}{\mathbb N}
+\newcommand{\zz}{\mathbb Z}
+\newcommand{\aaa}{{\mathcal A}}
+\newcommand{\bbb}{{\mathcal B}}
+\newcommand{\rrr}{{\mathcal R}}
+\newcommand{\fff}{{\mathcal F}}
+\newcommand{\ppp}{{\mathcal P}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\vv}{{\mathbf v}}
+\newcommand{\ww}{{\mathbf w}}
+\newcommand{\xx}{{\mathbf x}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\Om}{\Omega}
+\newcommand{\dd}{\mathop{}\,\mathrm{d}}
+\newcommand{\ud}{\, \mathrm{d}}
+\newcommand{\seq}[1]{\left\{#1\right\}_{n=1}^\infty}
+\newcommand{\isp}[1]{\quad\text{#1}\quad}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+\DeclareMathOperator{\imag}{Im}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\Tr}{Tr}
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+
+
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+\title{Math 122A Homework 8}
+\author{Ethan Martirosyan}
+\date{\today}
+\maketitle
+\hbadness=99999
+\hfuzz=50pt
+\section*{Bak and Newman Chapter 6}
+\subsection*{Problem 10}
+First, we will find the minimum modulus of $z^2 - z$ in the disc $\vert z \vert \leq 1$. Notice that $0^2 - 0 = 0$, so the minimum modulus of $z^2 - z$ in the disc $\vert z \vert \leq 1$ is evidently $0$. Next, we claim that the maximum modulus of $z^2 - z$ in the disc $\vert z \vert \leq 1$ is $2$. Since $z^2 - z$ is analytic on the disc $\vert z \vert \leq 1$, we may apply the Maximum Modulus Theorem to deduce that the maximum of $z^2 - z$ must occur on the circle $\vert z \vert = 1$. Notice that $z^2 - z = z(z-1)$. In order to maximize this product under the constraint that $\vert z \vert = 1$, we only need to maximize $\vert z - 1 \vert$ under this constraint. This maximum is achieved when $z = -1$. Thus, we may deduce that the maximum modulus of $z^2 - z$ in the disc $\vert z \vert \leq 1$ is $\vert z^2 - z \vert = \vert z \vert \vert z - 1 \vert = \vert  -1 \vert \vert -1 - 1 \vert = 2$.
+\newpage
+\subsection*{Problem 13}
+For the sake of contradiction, let us suppose that $p(z) \neq 0$ for all $z \in \mathbb{C}$. Let $M > 0$ be an arbitrary positive constant, and let $D_M = \{z \in \mathbb{C}: \vert z \vert \leq M\}$. By the Minimum Modulus Theorem, we know that $p(z)$ will attain its minimum on the boundary of $D_M$. Since $p(z)$ is a nonconstant polynomial, we know that 
+\[
+\lim_{z \rightarrow \infty} p(z) = \infty
+\] This informs us that there must exist some positive constant $L$ such that $\vert z \vert \geq L$ implies that $\vert p(z) \vert > \vert p(0) \vert$. Notice that for every $z \in \partial{D_L}$, we have $\vert p(z) \vert > \vert p(0) \vert$ (since $\vert z \vert = L$). This means that $p(z)$ does not attain its minimum on the boundary of $D_L$ (because the modulus of $p(0)$ is strictly less than the modulus of $p(z)$ for every $z \in \partial{D_L}$), contrary to the Minimum Modulus Theorem. This contradiction informs us that there must exist some $z \in \mathbb{C}$ such that $p(z) = 0$.
+ \newpage
+\section*{Needham Chapter 7}
+\subsection*{Problem 1}
+For any loop $L$ and point $p$ such that $p \not \in L$, we know that $\nu(L,p) = 0$ if and only if $p$ is outside $L$ and that $\nu(L,p) = \pm 1$ if and only if $p$ is inside $L$. By page $341$ of Needham, we know that $N(p) = \vert\nu(L,p)\vert + 2s$, where $s$ is a non-negative integer and $N(p)$ is the number of intersection points of the ray from $p$ with the simple loop $L$. From this, we obtain $\vert \nu(L,p) \vert = N(p) - 2s$. Using this equation and the fact that $\vert \nu(L,p)\vert \leq 1$, we may deduce that $N(p)$ is even if and only if $\nu(L,p) = 0$ and that $N(p)$ is odd if and only if $\nu(L,p) = \pm 1$. This informs us that if the number of intersection points is even, then $p$ is outside $L$; if the number of intersection points is odd, then $p$ is inside $L$.
+\newpage
+\subsection*{Problem 20}
+If $f = g$ on $\Gamma$, then we have $f - g = 0$ on $\Gamma$. This informs us that $\vert f - g \vert = 0$ on $\Gamma$. Since $f - g$ is analytic on and inside $\Gamma$, we may apply the Maximum Modulus Theorem to deduce that $\vert f - g \vert = 0$ inside $\Gamma$ so that $f = g$ throughout $\Gamma$.
+\end{document} 
