@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+%\usepackage{mathptmx}
+\usepackage{accents}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{IEEEtrantools}
+ \usepackage{float}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand*\conj[1]{\bar{#1}}
+\newcommand*\mean[1]{\bar{#1}}
+\newcommand\widebar[1]{\mathop{\overline{#1}}}
+
+
+\newcommand{\cc}{{\mathbb C}}
+\newcommand{\rr}{{\mathbb R}}
+\newcommand{\qq}{{\mathbb Q}}
+\newcommand{\nn}{\mathbb N}
+\newcommand{\zz}{\mathbb Z}
+\newcommand{\aaa}{{\mathcal A}}
+\newcommand{\bbb}{{\mathcal B}}
+\newcommand{\rrr}{{\mathcal R}}
+\newcommand{\fff}{{\mathcal F}}
+\newcommand{\ppp}{{\mathcal P}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\vv}{{\mathbf v}}
+\newcommand{\ww}{{\mathbf w}}
+\newcommand{\xx}{{\mathbf x}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\Om}{\Omega}
+\newcommand{\dd}{\mathop{}\,\mathrm{d}}
+\newcommand{\ud}{\, \mathrm{d}}
+\newcommand{\seq}[1]{\left\{#1\right\}_{n=1}^\infty}
+\newcommand{\isp}[1]{\quad\text{#1}\quad}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+\DeclareMathOperator{\imag}{Im}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\cis}{cis}
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+ \newtheorem{lemma}{Lemma}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+\title{Math 122A Final Exam}
+\author{Ethan Martirosyan}
+\date{\today}
+\maketitle
+\hbadness=99999
+\hfuzz=50pt
+\section*{Chapter 1}
+\subsection*{1.1}
+The field of complex numbers $\mathbb{C}$ is defined as the set of ordered pairs of real numbers $(a,b)$ with addition and multiplication defined as follows:
+\((a,b) + (c,d) = (a+c,b+d)\) and \(
+(a,b)(c,d) = (ac-bd,ad+bc) \). We may write $(a,b) = a+bi$ for real $a$ and $b$.
+\subsection*{1.2}
+The triangle inequality states that \(\vert z_1 + z_2 \vert \leq \vert z_1 \vert + \vert z_2 \vert\) for $z_1, z_2 \in \cc$. The polar form of $z$ is $r (\cos \theta + i\sin \theta) := r\cis \theta$, where $r$ is the modulus of $z$ and $\theta$ is its argument. It can be shown that $(r_1\cis \theta_1) (r_2 \cis \theta_2) = r_1r_2\cis(\theta_1+\theta_2)$. Intuitively, this says that the product of two complex numbers is obtained by multiplying their moduli and adding their arguments.
+\subsection*{1.4}
+The complex plane $\cc$ is a complete metric space, just as the real line $\rr$ is. This makes sense because $\cc \cong \rr^2$ as a vector space (that is, $\cc$ is a finite-dimensional vector space over $\rr$). The infinite series $\sum z_k$ converges if its sequence of partial sums converges. The following facts carry over from real analysis: if $\sum z_k$ converges, then $z_k \rightarrow 0$ and if $\sum \vert z_k \vert$ converges, then $\sum z_k$ converges.
+\section*{Chapter 2}
+\subsection*{2.1}
+If $g$ is defined in a neighborhood of $z$ and \(\lim_{h \rightarrow 0} \frac{g(z+h) - g(z)}{h}\) exists, then $g$ is differentiable at $z$. As in the real case, the sum, product, and quotient rules all hold for complex functions.
+\subsection*{2.2}
+A power series in $z$ is $\sum A_i z^i$ where each $A_i$ is a constant. The series $\sum A_i z^i$ converges when $\vert z \vert < 1/\varlimsup{\vert A_i \vert^{1/i}}$ and diverges when $\vert z \vert > 1/\varlimsup{\vert A_i \vert^{1/i}}$. This statement is significant because it states that every power series converges inside a disk and diverges outside that disk; that is, the domain of convergence must be a disk. However, the power series $\sum A_i z^i$ may converge or diverge when $\vert z\vert = 1/\varlimsup{\vert A_i \vert^{1/i}}$.
+\subsection*{2.3}
+The derivative of $\sum A_i z^i$ is $\sum i A_i z^{i-1}$ in its domain of convergence. Using this, we can show that every power series is infinitely differentiable in its domain of convergence. If $\sum r_n z^n = \sum t_n z^n$ at a set of points for which the origin is an accumulation point, then $r_n = t_n$ for all $n\in \nn$. This result shows that power series are surprisingly rigid. This rigidity is a reccuring theme throughout complex analysis.
+\section*{Chapter 3}
+\subsection*{3.1} If $g$ is differentiable at a point, then $g_y = ig_x$ there. A partial converse is as follows: if $g_x$ and $g_y$ both exist in some neighborhood of $z$ and are continuous at $z$ and $g_y = ig_x$ at $z$, then $g$ is differentiable at $z$. This partial converse is surprising, for it states that if $ig_x = g_y$ at $z$ (and $g_x,g_y$ satisfy some other weak requirements), then $\frac{g(z+h)-g(z)}{h}$ approaches the same finite value as $z$ approaches $0$ in any direction.
+\subsection*{3.2}
+We will now extend the real exponential function to a complex exponential function. We desire the following properties: \(\exp(z_1+z_2) = \exp(z_1)\exp(z_2)\) and
+\(\exp(y) = e^y\) for real $y$. Using the Cauchy-Riemann equations, we deduce that \(\exp(z) = e^x \cos y + i e^x \sin y\) where $z = x + iy$. With this definition of the complex exponential function, we may rewrite the polar form of $z$ as follows: $z = x+iy = r\cis \theta = re^{i\theta}$, where $r$ is the modulus of $z$ and $\theta$ is its argument. 
+\section*{Chapter 4}
+\subsection*{4.1}
+The following upper bound is often crucial in complex analysis: Let $L$ be a smooth curve with length $K$. If $g$ is continuous on $L$ and $\vert g \vert \leq J$ on $L$, then we have \(\vert \int_L g(z) \diff z \vert \leq K \cdot J\). Furthermore, we have a  complex version of the Fundamental Theorem of Calculus: if $g$ has an analytic antiderivative $G$, then \(\int_L g(z) \diff z = G(z(d)) - G(z(c))\) where $z(c)$ and $z(d)$ are the endpoints of $L$.
+\subsection*{4.2}
+We may use this result to prove the following rather technical theorem:
+Let $g$ be entire, and suppose $\Gamma$ is the boundary of a rectangle $R$. Then \(\int_\Gamma g(z) \diff z = 0\).
+With this theorem, we can prove that if $g$ is entire, then it has an entire antiderivative, which means that the complex version of the Fundamental Theorem of Calculus holds for entire functions as well. Now, we can show that if $g$ is entire and $L$ is any smooth closed curve, then \(\int_L g(z) \diff z = 0\) which improves significantly upon the rectangle theorem. This result is known as the Cauchy Closed Curve Theorem, and it is used quite often in later chapters.
+\section*{Chapter 5}
+\subsection*{5.1}
+Let $f$ be entire, and let $g(z) = \frac{f(z) - f(a)}{z-a}$ (we define $g(a) = f^\prime(a)$). As in Chapter $4$, we can show that $\int_L g(z) \diff z = 0$ for any smooth closed curve $L$. With this, we can prove the Cauchy Integral Formula:
+\[
+f(a) = \frac{1}{2\pi i} \int_L \frac{f(z)}{z-a} \diff z
+\]
+where $L$ is a circle containing $a$. Intuitively, this theorem tells us that the values of $f$ inside a circle can be determined from the values of $f$ on the circle, which is certainly unexpected. With this, we can prove that $f$ has a power series expansion and is thus infinitely differentiable. This demonstrates some of the differences between complex functions and real functions. For example, it is certainly possible for a real valued function $f$ to be differentiable but not twice differentiable (notice that $x^{4/3}$ is differentiable everywhere but not twice differentiable at $0$). In real analysis, being differentiable does not tell us anything about the existence of second derivatives or power series. In contrast, we have just shown that an entire complex function has infinitely many derivatives and a power series expansion.
+\subsection*{5.2}
+The Cauchy Integral Formula can also be used to prove Liouville's Theorem: if $g$ is bounded and entire, then $g$ is constant. This result is very surprising because there is no such result in real analysis. With Liouville's Theorem, we may deduce the Fundamental Theorem of Algebra: let $q(z)$ be a nonconstant complex polynomial. Then $q(z)$ has a zero in $\cc$. This illustrates another striking difference between real and complex analysis. There are certainly real polynomials with no real roots (such as $x^2+1$), but every complex polynomial has a complex root (notice that $(\pm i)^2 + 1 = 0$). In a sense, it is not necessary to create further extensions of $\cc$ to contain all the roots of complex polynomials. Finally, we have an analogue of Rolle's Theorem for complex polynomials, which is the Gauss-Lucas Theorem: if $q(z)$ is a complex polynomial and $q^\prime(\alpha) = 0$, then $\alpha$ is in the convex hull of the zeroes of $q(z)$. The proof relies on the fact that \(\frac{q^\prime(z)}{q(z)} = \frac{1}{z - \omega_1} + \cdots + \frac{1}{z-\omega_n}\) where $\omega_1,\ldots,\omega_n$ are the zeroes of $q(z)$.
+
+\section*{Chapter 6}
+\subsection*{6.1}
+In Chapters $4$ and $5$, we proved several results regarding entire functions. These results can easily be re-proven for functions that are analytic in a disk $D(\alpha; r)$.
+\subsection*{6.2}
+We know that if $g$ is analytic in $D(\alpha;r)$, then we may express $g$ as a power series centered at $\alpha$ in this disk. However, this is not true for general open sets. If $\alpha$ is in an open set $D$, then we may express $g$ as a power series centered at $\alpha$ in the largest open disk contained in $D$.
+\subsection*{6.3}
+The following theorem demonstrates the rigidity of analytic mappings: let $f$ and $g$ be analytic on the region $E$. If $f = g$ on a set of points with an accumulation point in $E$, then $f=g$ on all of $E$. It is important to note that the accumulation point must be in the set $E$; otherwise the theorem does not apply. Next, we may state the Maximum Modulus Theorem: let $g$ be a non-constant analytic function defined on a region $E$. For every point $z \in E$ and any $\varepsilon > 0$, there must be some point $\omega$ in $E$ within $\varepsilon$ of $z$ such that $\vert g(\omega) \vert > \vert g(z) \vert$. Equivalently, if the non-constant function $g$ is analytic on $E$ and continuous on $\overline{E}$, then $\vert g\vert$ must attain its maximum on $\partial{E}$. There is also a Minimum Modulus Theorem, which is as follows: let $g$ be non-constant and analytic in the region $E$. If $z \in E$ is a relative minimum, then $g(z) = 0$. Notice that there are no corresponding results in real analysis. For example, the function $-x^2+1$ takes its maximum value $1$ at $0 \in [-1,1]$; however, the function $-z^2 + 1$ takes its maximum value $2$ at the points $\pm i$ in the closed unit disk $\mathbb{D}$.
+\section*{Chapter 7}
+\subsection*{7.1}
+The Minimum Modulus Theorem has many applications, one of which is the Open Mapping Theorem: let $E$ be an open set, and let $g$ be a non-constant analytic mapping. Then $g(E)$ is open. The Maximum Modulus Theorem also has many applications, such as Schwarz' Lemma: let $g$ be analytic in $D(0;1)$, and suppose that $\vert g(z) \vert \leq 1$ for all $z \in D(0;1)$ and $g(0) = 0$. Then $\vert g(z) \vert \leq \vert z \vert$ for all $z$ in $D(0;1)$ and $\vert g^\prime(0) \vert \leq 1$. If $\vert g(z) \vert =  \vert z \vert$ for any $z \in D(0;1)$ or $\vert g^\prime(0) \vert = 1$, then $g(z) = \beta z$ where $\vert \beta \vert = 1$. Geometrically, this says that if the analytic mapping $g$ takes the unit disk to itself and leaves the center fixed, then either every point in the disk must move closer to the center or $g$ is a rotation of the disk.
+
+\subsection*{7.2}
+The following theorem is a partial converse to the Rectangle Theorem: Suppose that $g$ is continuous on the open set $E$. If \(\int_\Gamma g(z) \diff z = 0\) whenever $\Gamma \subseteq E$ is a rectangle, then $g$ is analytic on $E$. With this theorem, we can prove that if $g$ is analytic on $E \setminus \ell$ and continuous on $\ell$ (where $\ell$ is a line segment contained in the region $E$), then $g$ is analytic on $E$. Using this, we can prove the Schwarz Reflection Principle: If $g$ is analytic on some region $E$ that is symmetric over the real axis and $g$ is real-valued on the real axis, then $g(z) = \overline{g(\overline{z})}$ for all $z \in E$. This places strong constraints on $g$.
+\section*{Chapter 8}
+\subsection*{8.1}
+Intuitively, a simply connected region $E$ is a region such that for every point $z_0 \in \cc \setminus E$, there exists a curve $\gamma \subseteq \cc \setminus E$ connecting $z_0$ to $\infty$. The Cauchy Closed Curve Theorem can be generalized to simply connected sets: let $E$ be simply connected, and suppose that $L \subseteq E$ is a smooth closed curve. If $g$ is analytic in $E$, then \(\int_L g(z) \diff z  = 0\).
+\section*{Chapter 9}
+\subsection*{9.1}
+An isolated singularity of $g$ at $z_0$ is removable if redefining the function at the singularity makes it analytic there; it is a pole if there exists a positive integer $k$ such that $(z-z_0)^{k+1} g(z) \rightarrow 0$ as $z \rightarrow z_0$; otherwise, it is an essential singularity. The Casorati-Weierstrass Theorem says that the image of any deleted neighborhood of an essential singularity is dense in the complex plane. Intuitively, this says that analytic functions are not well-behaved near essential singularities.
+\subsection*{9.2}
+If a function $f$ is analytic in an annulus $A$ centered at $\alpha$, then we may represent it as a Laurent series centered at $\alpha$: $f(z) = \sum_{k = -\infty}^\infty a_k(z-\alpha)^k$. Notice the similarities between this result and the fact that functions analytic in a disk $D(\alpha;r)$ may be expressed as a power series centered at $\alpha$. In the case of Laurent series, however, it is not even necessary that $f$ be analytic at $\alpha$.
+\end{document}

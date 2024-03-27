@@ -1,0 +1,270 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+%\usepackage{mathptmx}
+\usepackage{accents}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{IEEEtrantools}
+ \usepackage{float}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand*\conj[1]{\bar{#1}}
+\newcommand*\mean[1]{\bar{#1}}
+\newcommand\widebar[1]{\mathop{\overline{#1}}}
+
+
+\newcommand{\cc}{{\mathbb C}}
+\newcommand{\rr}{{\mathbb R}}
+\newcommand{\qq}{{\mathbb Q}}
+\newcommand{\nn}{\mathbb N}
+\newcommand{\zz}{\mathbb Z}
+\newcommand{\aaa}{{\mathcal A}}
+\newcommand{\bbb}{{\mathcal B}}
+\newcommand{\rrr}{{\mathcal R}}
+\newcommand{\fff}{{\mathcal F}}
+\newcommand{\ppp}{{\mathcal P}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\vv}{{\mathbf v}}
+\newcommand{\ww}{{\mathbf w}}
+\newcommand{\xx}{{\mathbf x}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\Om}{\Omega}
+\newcommand{\dd}{\mathop{}\,\mathrm{d}}
+\newcommand{\ud}{\, \mathrm{d}}
+\newcommand{\seq}[1]{\left\{#1\right\}_{n=1}^\infty}
+\newcommand{\isp}[1]{\quad\text{#1}\quad}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+\DeclareMathOperator{\imag}{Im}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\cis}{cis}
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+
+
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+\title{Math 122A Homework 5}
+\author{Ethan Martirosyan}
+\date{\today}
+\maketitle
+\hbadness=99999
+\hfuzz=50pt
+\section*{Chapter 3}
+\subsection*{Problem 11}
+\subsubsection*{Part A}
+First, we note that $e^z = u(x,y) + iv(x,y) = e^x \cos y + i e^x \sin y$. To verify the Cauchy-Riemann equations, we note that $u_x = e^x \cos y = v_y$ and $u_y = -e^x \sin y = - v_x$. Since we have verified that $e^z$ satisfies the Cauchy-Riemann equations, it must be entire.
+\subsubsection*{Part B}
+Let $z_1 = x_1 + iy_1$ and $z_2 = x_2 + iy_2$. Then, we have 
+\[
+e^z = e^{x_1+x_2} \cos (y_1 + y_2) + ie^{x_1+x_2}\sin(y_1+y_2)
+\] Using the formulas for the sine and cosine of a sum as well as the fact that $e^{x_1+x_2} = e^{x_1}e^{x_2}$ (since $x_1$ and $x_2$ are real), we obtain
+\[
+e^{x_1}e^{x_2}(\cos y_1 \cos y_2 - \sin y_1 \sin y_2) + i e^{x_1}e^{x_2}(\sin y_1 \cos y_2 + \cos y_1 \sin y_2)
+\] This is equal to
+\[
+e^{x_1}e^{x_2} \cos y_1 \cos y_2 - e^{x_1}e^{x_2} \sin y_1 \sin y_2 + i  e^{x_1}e^{x_2} \sin y_1 \cos y_2 + i e^{x_1}e^{x_2} \cos y_1 \sin y_2
+\] Next, we may compute $e^{z_1}e^{z_2}$ as follows:
+\[
+e^{z_1}e^{z_2} = (e^{x_1}\cos y_1 + i e^{x_1} \sin y_1)(e^{x_2}\cos y_2 + i e^{x_2} \sin y_2) 
+\] By doing some algebra, we obtain
+\[ 
+e^{x_1}e^{x_2} \cos y_1 \cos y_2 - e^{x_1}e^{x_2} \sin y_1 \sin y_2 + i  e^{x_1}e^{x_2} \sin y_1 \cos y_2 + i e^{x_1}e^{x_2} \cos y_1 \sin y_2
+\] Thus we may conclude that
+\[
+e^{z_1+z_2} = e^{z_1}e^{z_2}
+\]
+\newpage
+\subsection*{Problem 12}
+If $z=x+iy$, then we have
+\[
+\vert e^z \vert = \vert e^x \cos y + ie^x \sin y \vert = \vert e^x(\cos y + i \sin y)\vert = \vert e^x \vert \vert \cos y + i \sin y\vert = \vert e^x \vert
+\] The last equality follows because 
+\[
+\vert \cos y + i \sin y \vert = \sqrt{\cos^2 y + \sin^2 y} = 1
+\]
+\newpage
+\subsection*{Problem 13}
+If $x>0$, then $e^z = e^x e^{iy}$ approaches $\infty$ as $z \rightarrow \infty$ because the magnitude of $e^z$ becomes arbitrarily large. If $x < 0$, then $e^{z} = e^{x}e^{iy}$ approaches $0$ as $z \rightarrow \infty$ because the magnitude of $e^z$ becomes arbitrarily small. If $x = 0$, then $e^z = e^{iy}$ traverses the unit circle infinitely many times. Notice that if $x \neq 0$ and $y \neq 0$, the ray from the origin is mapped to a spiral. That is, $e^{z} = e^{x}e^{iy}$ traces out a spiral as $z$ moves along the ray.
+\newpage
+\subsection*{Problem 14}
+\subsubsection*{Part A}
+Notice that $e^{x}e^{iy} = e^z = 1 = 1e^{i0}$. Then, we know that $e^x = 1$ and $e^{iy} = e^{i0}$, so that $x = 0$ and $y = 2k\pi$, where $k$ is any integer. Thus, we find that $z = 2k\pi i$.
+\subsubsection*{Part B}
+Notice that $e^{x}e^{iy} = e^z = i = 1e^{i\pi/2}$. Then, we know that $e^x = 1$ and $e^{iy} = e^{i\pi/2}$, so that $x=0$ and $y = 2k\pi + \pi/2$, where $k$ is any integer. Thus, we find that
+\[
+z = \bigg(\frac{\pi}{2} + 2k\pi\bigg)i 
+\]
+\subsubsection*{Part C}
+Notice that $e^{x}e^{iy} = e^z = -3 = 3e^{i\pi}$. Then, we know that $e^x = 3$ and $e^{iy} = e^{i\pi}$, so that $x = \ln 3$ and $y = (2k+1)\pi$, where $k$ is any integer. Thus, we find that
+\[
+z = \ln 3 + (2k+1)\pi i 
+\]
+\subsubsection*{Part D}
+Notice that $e^x e^{iy} = e^z = 1 + i  = \sqrt{2}e^{i\pi/4}$. Then, we know that $e^x = \sqrt{2}$ and $e^{iy} = e^{i\pi/4}$, so that $x = \ln 2^{1/2} = \frac{1}{2} \ln 2$ and $y = \pi/4 + 2k\pi = (2k+1/4)\pi$. Thus, we find that
+\[
+z = \frac{1}{2}\ln 2 + (2k+1/4)\pi i 
+\]
+\newpage
+\subsection*{Problem 19}
+First, we let $w = e^z$. Then $e^{w} = 1$ implies that $\re w = 0$ and $\imag w = 2\pi k$ for some integer $k$. Thus, we have $e^z = 2\pi k i$. Notice that $k$ must not be zero. Then, we obtain $e^x \cos y + i e^x \sin y = 2\pi k i$. From this, we find that $e^x \cos y = 0$ and $e^x \sin y = 2\pi k$.  Let us consider the first equation. Since $e^x$ is always positive, we must have $\cos y = 0$, so that $y = \frac{\pi}{2} + r \pi$, where $r$ is any integer. Now, we must consider whether $k$ is positive or negative. If $k$ is positive, then we want $\sin y$ to be positive (otherwise we won't be able to solve $e^x \sin y = 2\pi k$). Thus we may take $y = \frac{\pi}{2} + 2\pi r$. Then, we find that $e^x = 2\pi k$ so that $x = \ln(2\pi k)$. If $k$ is negative, then we want $\sin y$ to be negative (otherwise we won't be able to solve $e^x \sin y= 2\pi k$). Thus we may take $y = -\frac{\pi}{2} + 2\pi r$ so that $x = \ln(-2\pi k)$. We may conclude that the general solution is 
+\[
+z = x + iy = \ln(2 \pi \vert k \vert) + i\bigg(\pm \frac{\pi}{2} + 2\pi r\bigg)
+\] where $k$ is a nonzero integer and $r$ is any integer.
+\newpage
+\section*{Chapter 4}
+\subsection*{Problem 3}
+Notice that
+\[
+\int_{C} f(z) \diff z = \int_{0}^{2\pi} f(z(t))\dot{z}(t) \diff t
+\] Since $z(t) = \sin t + i \cos t$ and $f(z) = 1/z$, we find that
+\[
+f(z(t)) = \frac{1}{z(t)} = \frac{1}{\sin t + i \cos t} = \frac{\sin t}{\sin^2 t + \cos^2 t} -  i\frac{\cos t}{\sin^2 t + \cos^2 t} = \sin t - i \cos t
+\] and
+\[
+\dot{z}(t) = \cos t - i \sin t
+\] Thus, we have
+\[
+f(z(t))\dot{z}(t) = (\sin t - i \cos t)(\cos t - i \sin t) = -i(\sin^2 t + \cos^2 t) = -i
+\] This informs us that
+\[
+\int_{C} f(z) \diff z = \int_{0}^{2\pi} f(z(t))\dot{z}(t) \diff t = \int_{0}^{2\pi} -i \diff t = -2\pi i 
+\] The result is different from that of example $2$ because the curve $C$ traverses the circle clockwise rather than counterclockwise.
+\newpage
+\subsection*{Problem 6}
+We may write 
+\[
+\int_{\vert z \vert = 1} f  = Re^{i\beta}
+\] for some $R \geq 0$ and $\beta \in [0,2\pi)$. Let us parametrize the unit circle $\vert z \vert = 1$ as follows: $z(t) = e^{it}$, where $0 \leq t \leq 2\pi$. Then, we have $\dot{z}(t) = ie^{it}$ so that
+\[
+Re^{i\beta} = \int_{\vert z \vert = 1} f = \int_{0}^{2\pi} f(z(t)) \dot{z}(t) \diff t =  \int_{0}^{2\pi} f(e^{it})ie^{it} \diff t
+\] Multiplying both sides of this equation by $e^{-i\beta}$ yields
+\[
+R =  \int_{0}^{2\pi} f(e^{it})ie^{i(t-\beta)} \diff t
+\] Substituting $e^{i(t-\beta)} = \cos(t-\beta) + i \sin(t-\beta)$ into the above equation, we obtain
+\[
+R = \int_0^{2\pi} if(e^{it})\cos(t-\beta) - f(e^{it}) \sin(t-\beta) \diff t
+\] The additivity of integration yields
+\[
+R = i \int_0^{2\pi} f(e^{it})\cos(t-\beta) \diff t - \int_0^{2\pi} f(e^{it}) \sin(t-\beta) \diff t
+\] Since $f$ is real-valued and $R$ is real, we may deduce that
+\[
+\int_0^{2\pi} f(e^{it})\cos(t-\beta) \diff t = 0
+\] Thus, we obtain
+\[
+R = - \int_0^{2\pi} f(e^{it}) \sin(t-\beta) \diff t
+\] Taking absolute values yields
+\[
+R = \vert R \vert \leq \int_{0}^{2\pi} \vert f(e^{it}) \sin(t-\beta) \vert \diff t = \int_{0}^{2\pi} \vert f(e^{it}) \vert \vert \sin(t-\beta) \vert \diff t \leq \int_{0}^{2\pi} \vert \sin(t-\beta) \vert \diff t
+\] since we assume that $\vert f \vert \leq 1$. Since $\sin$ has a period of $2\pi$ and we are integrating over an interval of length $2\pi$, we may deduce that
+\[
+\int_{0}^{2\pi} \vert \sin(t-\beta) \vert \diff t =\int_{0}^{2\pi} \vert \sin t \vert \diff t = \int_0^{\pi} \sin t \diff t - \int_{\pi}^{2\pi} \sin t \diff t = 4
+\] since
+\[
+\int_0^{\pi} \sin t \diff t - \int_{\pi}^{2\pi} \sin t \diff t = (-\cos \pi + \cos 0) - (-\cos 2\pi + \cos \pi) = 1+1-(-1-1) = 4
+\] Notice that
+\[
+R = \vert R e^{i\beta} \vert = \bigg \vert \int_{\vert z \vert = 1} f  \bigg\vert 
+\] so we may conclude that
+\[
+\bigg \vert \int_{\vert z \vert = 1} f  \bigg\vert \leq 4
+\]
+\newpage
+\subsection*{Problem 8}
+\subsubsection*{Part A}
+If $k \neq -1$, then an antiderivative of $z^k$ is
+\[
+ F(z) = \frac{1}{k+1}z^{k+1}
+\] Notice that $F(z)$ is analytic on $C$. By Theorem 4.16, we find that
+\[
+\int_C z^k = 0
+\]
+\subsubsection*{Part B}
+Since $z = Re^{i\theta}$ for $0 \leq \theta \leq 2\pi$, we may note that
+\[
+\int_C f(z) \diff z = \int_{0}^{2\pi} f(z(\theta)) \dot{z}(\theta) \diff \theta = \int_{0}^{2\pi} R^ke^{ik\theta} iRe^{i\theta} \diff \theta = \int_{0}^{2\pi} iR^{k+1}e^{i(k+1)\theta} \diff \theta
+\] We have
+\[
+e^{i(k+1)\theta} = \cos((k+1)\theta)+i\sin((k+1)\theta)
+\] so substitution yields
+\[
+\int_{0}^{2\pi} i R^{k+1} \cos((k+1)\theta) - R^{k+1}\sin((k+1)\theta) \diff \theta 
+\] which equals
+\[
+i R^{k+1} \int_0^{2\pi} \cos((k+1)\theta) \diff \theta - R^{k+1} \int_{0}^{2\pi}\sin((k+1)\theta) \diff \theta 
+\] Since $k \neq -1$, the above expression is equal to 
+\[
+\frac{i R^{k+1}}{k+1} (\sin(2(k+1)\pi)-\sin(0(k+1))) - \frac{R^{k+1}}{k+1} (-\cos(2(k+1)\pi) + \cos(0(k+1))) = 0
+\]
+\newpage
+\subsection*{Problem 10}
+\subsubsection*{Part A}
+We know that $e^z$ is entire. By Theorem 4.15, it is the derivative of some analytic function (in this case, it is the derivative of $e^z$). By Proposition 4.12, it is only necessary to evaluate the antiderivative at the endpoints in order to find the value of the integral. Thus, we have
+\[
+\int_0^i e^z \diff z = e^{i} - e^{0} = \cos 1 + i \sin 1 - 1
+\]
+\subsubsection*{Part B}
+We know that $\cos(2z)$ is entire. By Theorem $4.15$, it is the derivative of some analytic function (in this case, it is the derivative of $\frac{1}{2}\sin(2z)$). By Proposition $4.12$, it is only necessary to evaluate the antiderivative at the endpoints in order to find the value of the integral. Thus, we have
+\[
+\int_{\pi/2}^{\pi/2+i} \cos(2z) \diff z = \frac{1}{2} (\sin(\pi+2i) - \sin(\pi)) = \frac{1}{2}\sin(\pi+2i) 
+\] We may use the angle addition formula to obtain
+\[
+\frac{1}{2}\sin(\pi+2i) = \frac{1}{2}(\sin \pi \cos 2i + \cos \pi \sin 2i) = -\frac{1}{2}\sin(2i) = -\frac{i}{2}\sinh(2)
+\] The last equality follows because $\sin (iy) = i \sinh y$ for any real $y$ (this identity is stated in \emph{Visual Complex Analysis}).
+\newpage
+\subsection*{Problem 11}
+Let the curve $C$ be defined by the function $z(t) = a + (b-a)t$, where $0 \leq t \leq 1$. Since $D$ is convex, we know that $z(t) \in D$ for all $t$. Now, we may note that
+\[
+\vert f(b) - f(a) \vert  = \vert f(z(1)) - f(z(0)) \vert = \bigg \vert \int_0^1 f^\prime(z(t)) \dot{z}(t) \diff t\bigg \vert = \bigg \vert \int_C f^\prime(z) \diff z \bigg \vert \leq \vert b-a \vert
+\] The last inequality follows by Proposition $4.10$ since we know that $\vert f^\prime \vert \leq 1$ on $C$ and the length of the curve $C$ is $\vert b - a \vert$.
+\newpage
+\subsection*{Problem 12}
+First, we note that the left half-plane is convex. Therefore, we know that the curve $C$ defined by the function $z(t) = a + (b-a)t$ for $0\leq t \leq 1$ lies inside the left half-plane. Notice that the curve $C$ is closed and bounded, so that $C$ is compact. Furthermore, the set $R =\{z: \re(z) \geq 0\}$ is closed. Thus, the distance between the curve $C$ and the set $R$ must be positive. This means that there must exist some $\delta < 0$ such that $\re(z(t)) \leq \delta$ for all $t$. Now, we may note that
+\[
+\vert e^a - e^b \vert = \bigg \vert \int_0^1 \exp(z(t)) \dot{z}(t) \diff t \bigg \vert \leq \int_0^1 \vert \exp(z(t)) \vert \vert \dot{z}(t) \vert \diff t 
+\] Notice that
+\[
+\vert \exp(z(t)) \vert = \exp(\re(z(t))) \leq e^\delta < 1
+\] so that
+\[
+\int_0^1 \vert \exp(z(t)) \vert \vert \dot{z}(t) \vert \diff t \leq e^\delta \int_0^1 \vert \dot{z}(t) \vert \diff t = e^\delta \vert a - b\vert < \vert a - b \vert
+\] We may conclude that
+\[
+\vert e^a - e^b \vert < \vert a - b \vert
+\]
+\end{document} 

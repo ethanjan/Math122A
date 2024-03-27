@@ -1,0 +1,347 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+%\usepackage{mathptmx}
+\usepackage{accents}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{IEEEtrantools}
+ \usepackage{float}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand*\conj[1]{\bar{#1}}
+\newcommand*\mean[1]{\bar{#1}}
+\newcommand\widebar[1]{\mathop{\overline{#1}}}
+
+
+\newcommand{\cc}{{\mathbb C}}
+\newcommand{\rr}{{\mathbb R}}
+\newcommand{\qq}{{\mathbb Q}}
+\newcommand{\nn}{\mathbb N}
+\newcommand{\zz}{\mathbb Z}
+\newcommand{\aaa}{{\mathcal A}}
+\newcommand{\bbb}{{\mathcal B}}
+\newcommand{\rrr}{{\mathcal R}}
+\newcommand{\fff}{{\mathcal F}}
+\newcommand{\ppp}{{\mathcal P}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\vv}{{\mathbf v}}
+\newcommand{\ww}{{\mathbf w}}
+\newcommand{\xx}{{\mathbf x}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\Om}{\Omega}
+\newcommand{\dd}{\mathop{}\,\mathrm{d}}
+\newcommand{\ud}{\, \mathrm{d}}
+\newcommand{\seq}[1]{\left\{#1\right\}_{n=1}^\infty}
+\newcommand{\isp}[1]{\quad\text{#1}\quad}
+
+\DeclareMathOperator{\imag}{Im}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\cis}{cis}
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+
+
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+\title{Math 122A Homework 2}
+\author{Ethan Martirosyan}
+\date{\today}
+\maketitle
+\hbadness=99999
+\hfuzz=50pt
+\section*{Chapter 1 Problem 15}
+\subsection*{Part A}
+The set consisting of all points $z$ satisfying $\vert z - i \vert \leq 1$ is the closed disk of radius $1$ centered at $i$. This set is not a region because it is not open.
+\subsection*{Part B}
+Note that 
+\[
+\bigg \vert \frac{z-1}{z+1} \bigg \vert = 1
+\] if and only if
+\[
+\vert z - 1 \vert = \vert z + 1 \vert
+\] Geometrically, this set consists of points that have the same distance to $1$ and $-1$. That is, it is the perpendicular bisector of the line segment connecting $1$ to $-1$, which is to say that it is the imaginary axis. This set is not a region because it is closed.
+\subsection*{Part C}
+Let $z= x+yi$. Notice that
+\[
+\vert z- 2 \vert > \vert z- 3 \vert
+\] if and only if
+\[
+(x-2)^2+y^2 > (x-3)^2 + y^2
+\] if and only if
+\[
+\vert x - 2 \vert > \vert x - 3 \vert
+\] Comparing $\vert x - 2\vert$ and $\vert x - 3\vert$, it is evident that $\vert x-2\vert$ exceeds $\vert x-3 \vert$ when $x > 5/2$. Therefore, this set consists of all points $z=x+iy$ where $x > 5/2$ and $y \in \R$. This set is a region because it is open and connected.
+\subsection*{Part D}
+The set consisting of all points $z$ such that $\vert z \vert < 1$ and $\imag z > 0$ is a semi-disk of radius $1$ centered at $0$. It is a region because it is open and connected.
+\subsection*{Part E}
+Notice that
+\[
+\frac{1}{z} = \overline{z}
+\] if and only if
+\[
+\vert z \vert^2 = z\overline{z} = 1
+\] if and only if $z$ is on the circle of radius $1$ centered at $0$. This set is not a region because it is not open.
+\newpage
+\section*{Problem 25}
+Let $T$ be a circle in the complex plane. We want to show that the corresponding set $S$ on the Riemann sphere is a circle. If $(x,y) \in T$, then the corresponding point on $S$ is 
+\[
+f(x,y) = \bigg(\frac{x}{x^2+y^2+1}, \frac{y}{x^2+y^2+1}, \frac{x^2+y^2}{x^2+y^2+1}\bigg)
+\] (where $f(x,y)$ is the inverse of the stereographic projection). If we can show that there exist constants $A,B,C,D$ such that
+\[
+A\frac{x}{x^2+y^2+1} + B\frac{y}{x^2+y^2+1} + C\frac{x^2+y^2}{x^2+y^2+1} =D
+\] then we will know that $f(x,y)$ also lies on a plane, which means that the corresponding set in $S$ is the intersection of the Riemann sphere with a plane, thus proving that $S$ is a circle. Let us multiply the above equation by $x^2+y^2+1$ to obtain
+\[
+Ax + By + C(x^2+y^2) = D(x^2+y^2+1)
+\] so that
+\[
+(C-D)(x^2+y^2) + Ax + By = D
+\] Since $T$ is a circle, we may write it as the set of points $z=x+yi$ such that $\vert z - \gamma \vert = r$, where $\gamma = a+bi$ and $r$ is a real number. Squaring both sides, we obtain $\vert z - \gamma \vert^2 = r^2$ so that
+\[
+(x-a)^2 + (y-b)^2 = r^2
+\] Expanding this, we obtain
+\[
+x^2 - 2ax + a^2 + y^2 - 2by + b^2 = r^2
+\] or
+\[
+x^2+y^2 -2ax - 2by = r^2 - a^2 - b^2
+\] In order to put this equation into the form
+\[
+(C-D)(x^2+y^2) + Ax + By = D
+\] we let $C-D = 1$, $A = -2a$, $B = -2b$, and $D= r^2 - a^2 - b^2$. For this choice of $A,B,C,D$, we obtain
+\[
+A\frac{x}{x^2+y^2+1} + B\frac{y}{x^2+y^2+1} + C\frac{x^2+y^2}{x^2+y^2+1} =D
+\] By the above reasoning, $S$ is a circle on the Riemann sphere. Next, we may suppose that $T$ is a line. This means that for any point $(x,y) \in T$, we have $ax+by = c$, where $a,b,c$ are real numbers. In order to put this in the form
+\[
+(C-D)(x^2+y^2) + Ax + By = D
+\] we let $C-D = 0$, $A = a$, $B = b$, and $d = c$. Then we have
+\[
+A\frac{x}{x^2+y^2+1} + B\frac{y}{x^2+y^2+1} + C\frac{x^2+y^2}{x^2+y^2+1} = D
+\] so the corresponding point in $S$ is on a plane, which means that the set $S$ corresponding to $T$ under stereographic projection is a circle. Since $C = D$, we know that $S$ goes through the point $(0,0,1)$ (this fact is mentioned in Section $1.5$ of the textbook).
+\newpage
+\section*{Problem 26}
+Let us write $P(z) = a_0 + a_1z + a_2z^2 + \cdots + a_nz^n$ where $a_n \neq 0$. We may rewrite this as 
+\[
+z^n\bigg(\sum_{k=0}^n a_kz^{k-n}\bigg)
+\] Since $k - n < 0$ for all $k$ such that $0 \leq k < n$, we find that
+\[
+\lim_{z\rightarrow \infty} a_k z^{k-n} = 0 
+\] Thus, we may deduce that
+\[
+\lim_{z\rightarrow \infty} \sum_{k=0}^{n-1} a_k z^{k-n} = 0
+\] In particular, there must be some $M>0$ such that $\vert z\vert > M$ implies that 
+\[
+\bigg\vert \sum_{k=0}^{n-1} a_k z^{k-n} \bigg\vert < \frac{\vert a_n \vert}{2} 
+\] Let us write
+\[
+Q(z) = \sum_{k=0}^{n-1} a_k z^{k-n}
+\] 
+For $\vert z\vert > M$, we have
+\[
+\vert P(z) \vert = \bigg \vert z^n\bigg(\sum_{k=0}^n a_kz^{k-n}\bigg) \bigg \vert =   \vert z^n(a_n + Q(z)) \vert = \vert z \vert^n \vert a_n + Q(z) \vert \geq \vert z \vert^n (\vert a_n \vert - \vert Q(z) \vert) \geq \vert z\vert^n \cdot \frac{\vert a_n \vert}{2} 
+\] where the first inequality holds by the reverse triangle inequality. Since $\vert z \vert^n \rightarrow \infty$ as $z \rightarrow \infty$, it is evident that $P(z) \rightarrow \infty$ as $z \rightarrow \infty$.
+\newpage
+\section*{Problem 28}
+First, we will demonstrate what the function $z \mapsto 1/z$ does to points on the Riemann sphere. Let $(a,b,c)$ be a point on the sphere. If $f$ represents stereographic projection, then we have
+\[
+f(a,b,c) = \bigg(\frac{a}{1-c}, \frac{b}{1-c}\bigg)
+\] If $z = x+yi$, then 
+\[
+\frac{1}{z} = \frac{1}{x+yi} = \frac{1}{x+yi} \cdot \frac{x-yi}{x-yi} = \frac{x-yi}{x^2+y^2} 
+\] In our case, we have
+\[
+\frac{1}{f(a,b,c)} = \frac{a/(1-c)}{(a/(1-c))^2+(b/(1-c))^2}-\frac{b/(1-c)}{(a/(1-c))^2+(b/(1-c))^2}i
+\] Notice that
+\[
+(a/(1-c))^2+(b/(1-c))^2 = (a^2 + b^2)/(1-c)^2 = (c-c^2)/(1-c)^2 = c(1-c)/(1-c)^2 = c/(1-c) 
+\] We know that $a^2 + b^2  = c - c^2$ because
+\[
+a^2 + b^2 + (c-1/2)^2 = 1/4
+\] by assumption. By some algebra, we obtain
+\[
+a^2 + b^2 = 1/4 - (c-1/2)^2 = c - c^2
+\] Thus, we find that
+\[
+\frac{1}{f(a,b,c)} = \frac{a/(1-c)}{c/(1-c)}-\frac{b/(1-c)}{c/(1-c)}i = \frac{a}{c} - \frac{b}{c}i
+\] From the textbook, we know that
+\[
+f^{-1}(a/c,-b/c) = \bigg(\frac{a/c}{(a/c)^2+(b/c)^2+ 1},-\frac{b/c}{(a/c)^2+(b/c)^2+1}, \frac{(a/c)^2+(b/c)^2}{(a/c)^2+(b/c)^2 + 1}\bigg)
+\] Notice that
+\[
+\frac{a/c}{(a/c)^2+(b/c)^2+1} = \frac{a/c}{(a^2+b^2+c^2)/c^2} = \frac{ac}{a^2+b^2+c^2} = \frac{ac}{c - c^2 + c^2} = a
+\] and
+\[
+-\frac{b/c}{(a/c)^2+(b/c)^2+1} = -\frac{b/c}{(a^2+b^2+c^2)/c^2} = -\frac{bc}{a^2+b^2+c^2} = -\frac{bc}{c - c^2 + c^2} = -b
+\] and
+\[
+\frac{(a/c)^2+(b/c)^2}{(a/c)^2+(b/c)^2 + 1} = \frac{(a^2 + b^2)/c^2}{(a^2+b^2+c^2)/c^2} = \frac{a^2 + b^2}{a^2+b^2+c^2} = \frac{c-c^2}{c-c^2+c^2} = \frac{c-c^2}{c} = 1-c
+\] Thus, we have
+\[
+f^{-1}(a,b) = (a,-b,1-c)
+\] This shows that for any point $(a,b,c)$ on the Riemann sphere, the function $1/z$ takes it to the point $(a,-b,1-c)$. Since the sphere is centered at $(0,0,1/2)$, it is evident that this transformation is equivalent to reflecting across the $xz$ plane and across the plane $z=1/2$. This is equivalent to a $180$ degree rotation about the diameter that goes through the points $(1/2,0,1/2)$ and $(-1/2,0,1/2)$, which is just the $x$ axis translated up by $1/2$ units. Now, we may note that $z \mapsto 1/z$ must take circles and lines in $\mathbb{C}$ to circles and lines in $\mathbb{C}$ because stereographic projection, its inverse, and the function $z \mapsto 1/z$ on the sphere all take circles and lines to circles and lines.
+\newpage
+\section*{Chapter 2 Problem 1}
+First, we will show that if $M$ is an analytic monomial, then $M_y = iM_x$. Suppose $M(z) = az^n = a(x+yi)^n$, where $a$ is a complex constant. By the chain rule, we have
+\[
+M_y = na(x+yi)^{n-1}i
+\] We also have
+\[
+M_x = na(x+yi)^{n-1}
+\] so that
+\[
+iM_x = na(x+yi)^{n-1}i
+\] Thus we see that $M_y = iM_x$. Next, let us consider an analytic polynomial
+\[
+P(z) = a_0 + a_1z + a_2 z^2 + \cdots + a_n z^n
+\] We may write this as a sum of monomials
+\[
+P(z) = \sum_{k=0}^n M^{(k)}
+\] where $M^{(k)} = a_k z^k$. Taking the partial derivative of $P(z)$ with respect to $y$, we obtain
+\[
+P_y = \sum_{k=0}^n M_y^{(k)}
+\] Taking the partial derivative of $P(z)$ with respect to $x$ and multiplying by $i$, we obtain
+\[
+iP_x = \sum_{k=0}^n iM_x^{(k)}
+\] For each $k$, we have $M_y^{(k)} = iM_x^{(k)}$, so that
+\[
+P_y = \sum_{k=0}^n M_y^{(k)} = \sum_{k=0}^n iM_x^{(k)} = iP_x
+\]
+\newpage
+\section*{Problem 3}
+\subsection*{Part A}
+For this polynomial, we have $u(x,y) = x^3 - 3xy^2 - x$ and $v(x,y) = 3x^2y - y^3 - y$. Notice that $u_x = 3x^2 - 3y^2 - 1$ and $v_y = 3x^2 - 3y^2 - 1$ so that $u_x = v_y$. We also have $u_y = -6xy$ and $v_x = 6xy$ so that $u_y = -v_x$. Thus this polynomial is analytic.
+\subsection*{Part B}
+For this polynomial, we have $u(x,y) = x^2$ and $v(x,y) = y^2$. Here we have $u_x = 2x$ and $v_y = 2y$, so $u_x \neq v_y$, and this polynomial is not analytic.
+\subsection*{Part C}
+For this polynomial, we have $u(x,y) = 2xy$ and $v(x,y) = y^2-x^2$. Notice that $u_x = 2y$ and $v_y = 2y$, so $u_x = v_y$. Furthermore, we have $u_y = 2x = -v_x$, so this polynomial is analytic.
+\newpage
+\section*{Problem 4}
+Suppose that $P(z)= a_0 + \cdots + a_nz^n$ is a nonconstant analytic polynomial that takes imaginary values only. Then its partial derivative with respect to $y$ can take on imaginary values only. To prove this, consider the following expression:
+\[
+\frac{P(x,y+h) - P(x,y)}{h}
+\] It is evident that the numerator is purely imaginary. Taking the limit as $h \rightarrow 0$ along the real axis, we may deduce that $P_y$ is purely imaginary. Similarly, we know that $P_x$ is purely imaginary. Since $P$ is nonconstant, we know that there must exist some point at which $P_x$ and $P_y$ are nonzero. At this point $P_y$ is imaginary, and $iP_x$ is real because $P_x$ is imaginary.
+\newpage
+\section*{Problem 9}
+\subsection*{Part A}
+To write the power series 
+\[
+\sum_{n=0}^\infty z^{n!}
+\] in the form
+\[
+\sum_{n=0}^\infty C_n z^n
+\] we note that $C_n = 1$ if $n = k!$ for some integer $k$; otherwise $C_n = 0$. Thus we may deduce that
+\[
+\varlimsup \vert C_n \vert^{1/n} = 1
+\] so that the radius of convergence is $1$.
+\subsection*{Part B}
+Notice that
+\[
+\sum_{n=0}^\infty (n + 2^n)z^n = \sum_{n=0}^\infty nz^n + \sum_{n=0}^\infty 2^n z^n
+\] Thus, the power series 
+\[
+\sum_{n=0}^\infty (n + 2^n)z^n
+\] must converge wherever 
+\[
+\sum_{n=0}^\infty nz^n
+\] and
+\[
+\sum_{n=0}^\infty 2^n z^n
+\] converge. Notice that $n^{1/n} \rightarrow 1$ so the radius of convergence of the power series
+\[
+\sum_{n=0}^\infty nz^n
+\] is $1$. Furthermore, we note that $(2^n)^{1/n} = 2$ so that the radius of convergence of the power series
+\[
+\sum_{n=0}^\infty 2^n z^n
+\] is $1/2$. Thus, we may deduce that the power series
+\[
+\sum_{n=0}^\infty (n + 2^n)z^n
+\] converges when $\vert z \vert < \frac{1}{2}$. Furthermore, we know that the power series diverges when $\vert z \vert > \frac{1}{2}$ because then
+\[
+\vert (n+2^n)z^n \vert \geq \vert 2z \vert^n - \vert n \vert
+\] Notice that $\vert 2z \vert > 1$ so that $\vert 2z \vert^n$ increases geometrically. Since $n$ only grows linearly, we know that $\vert 2z \vert^n - \vert n \vert \rightarrow \infty$, so the power series must diverge.
+\newpage
+\section*{Problem 10}
+First, we may denote the radius of convergence of the power series
+\[
+\sum c_n z^n
+\] by $R$ and define
+\[
+L = \lim \vert c_n \vert^{1/n}
+\] Note that
+\[
+R = \frac{1}{L}
+\]
+\subsection*{Part A}
+We claim that the radius of convergence $R^\prime$ of the series
+\[
+\sum n^p c_n z^n 
+\] is $R$. To prove this, note that
+\[
+L^\prime = \lim \vert n^p c_n\vert^{1/n} = \lim \sqrt[n]{n^p} \cdot \lim \vert c_n \vert^{1/n} = \lim \sqrt[n]{n^p} \cdot L 
+\] We claim that
+\[
+ \lim \sqrt[n]{n^p} = 1
+\] To prove this, note that
+\[
+\sqrt[n]{n^p} = \sqrt[n]{n\cdots n} = \sqrt[n]{n} \cdots \sqrt[n]{n}
+\] Since $\sqrt[n]{n} \rightarrow 1$, we can apply the limit laws of multiplication to deduce that $\sqrt[n]{n^p} \rightarrow 1$. Thus $L^\prime = L$ and
+\[
+R^\prime = \frac{1}{L^\prime} = \frac{1}{L} = R
+\]
+\subsection*{Part B}
+We claim that the radius of convergence $R^\prime$ of the series
+\[
+\sum \vert c_n \vert z^n
+\] is equal to $R$. To prove this, note that
+\[
+L^\prime = \lim \vert \vert c_n \vert \vert^{1/n} = \lim \vert c_n \vert^{1/n} = L
+\] so that
+\[
+R^\prime = \frac{1}{L^\prime} = \frac{1}{L} = R
+\]
+\subsection*{Part C}
+We claim that the radius of convergence $R^\prime$ of the series
+\[
+\sum c_n^2  z^n
+\] is equal to $R^2$. To prove this, we note that
+\[
+L^\prime = \lim \vert c_n^2 \vert^{1/n} = \lim (\vert c_n \vert^{1/n})^2 = \big(\lim \vert c_n \vert^{1/n}\big)^2 = L^2
+\] Therefore, we have
+\[
+R^\prime = \frac{1}{L^\prime} = \frac{1}{L^2} = R^2
+\]
+\end{document} 
